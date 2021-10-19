@@ -31,6 +31,21 @@ into the {body} of the default.hbs template --}}
     <div class="inner posts">
 
         <div class="post-feed">
+
+            <article id="now-playing" class="post-card post">
+                <div class="post-card-content">
+                    <header class="post-card-header">
+                        <div class="post-card-primary-tag">Now playing</div>
+                        <h2 class="post-card-title"></h2>
+                    </header>
+                    <audio id="player" controls>
+                        <source src="https://radio.midnightathletics.com/stream.mp3" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <div class="post-card-excerpt"></div>
+                </div>
+            </article>
+
             {{#foreach posts}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
