@@ -1,0 +1,17 @@
+name: CI/CD
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Deploy Ghost Theme
+      uses: TryGhost/action-deploy-theme@v1.4.0
+      with:
+        api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+        api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
